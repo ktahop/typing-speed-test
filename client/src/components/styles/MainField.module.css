@@ -1,0 +1,9 @@
+.container {
+  padding: 1.5rem;
+  width: 700px;
+  height:400px;
+  border: 2px solid white;
+  border-radius: 1rem;
+  overflow-wrap: break-word;
+  overflow:scroll;
+}
