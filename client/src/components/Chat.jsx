@@ -9,27 +9,39 @@ const Chat = () => {
 
   const sendMessage = (e) => {
     e.preventDefault()
-    socket.emit('send_message', { msgSend })
-    setMsgSend("")
+      socket.emit('send', msgSend)
+      setMsgSend("")
   }
 
   useEffect(() => {
-    socket.on('receive_message', data =>
-    setMsgReceived(prev => [...prev, data.msgSend])
+    socket.on('receive', data => 
+      setMsgReceived(prev => [data, ...prev])
     )
-    return () => socket.off('receive_message')
-  },[])
+    return () => socket.off('receive')
+  },[socket])
 
   return (
     <div className={style.chat}>
-      <h1>Messages:</h1>
-      <form onSubmit={sendMessage}>
-        <input type="text" placeholder='Message...'
-          onChange={e => setMsgSend(e.target.value)}
-          value={msgSend} />
-        <button>Send</button>
-      </form>
-      {msgReceived.map((msg, idx) => <p key={idx}>{msg}</p>)}
+      <h1>Chat</h1>
+      <div className={style.chatBody}>
+        {msgReceived.map((msg, idx) =>
+          <p key={idx}>
+            <span style={{color: idx % 2 === 0? '#a6e22e' : '#f92672'}}>// </span>
+            {msg}
+          </p>
+        )}
+      </div>
+      <div className={style.flex}>
+        <form onSubmit={sendMessage}>
+          <input 
+            className={style.input}
+            type="text" 
+            placeholder='Message...'
+            onChange={e => setMsgSend(e.target.value)}
+            value={msgSend} />
+          <button className={style.btn}>Send</button>
+        </form>
+      </div>
     </div>
   )
 }

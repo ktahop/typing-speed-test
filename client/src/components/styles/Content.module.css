@@ -1,0 +1,51 @@
+.container {
+  padding: 1.5rem;
+  width: 700px;
+  border: 2px solid #3d3d3d;
+  border-radius: 1rem;
+  overflow-wrap: break-word;
+  overflow:scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.textfield {
+  font-family: monospace;
+  font-size: 1.3rem;
+}
+
+.instruction {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  color: var(--clr-cyan)
+}
+
+.btn {
+  width: 100px;
+  padding: 5px;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: 200ms;
+}
+
+.btn:hover {
+  background-color: var(--clr-cyan);
+  width: 100px;
+  padding: 5px;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: 200ms;
+}
+
+.option {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.option input {
+  margin-right: 1rem;
+}

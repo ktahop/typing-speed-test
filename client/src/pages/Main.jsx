@@ -1,6 +1,6 @@
 import style from './Main.module.css'
 import Header from '../components/Header'
-import MainField from "../components/MainField";
+import Content from "../components/Content";
 import Chat from "../components/Chat"
 import { generateWords } from '../utils/RanWords';
 import { generateSyntaxes } from '../utils/RanWords';
@@ -16,7 +16,7 @@ const Main = () => {
       </div>
       <div className={style.flex}>
         <div className={style.content}>
-          <MainField randomWords={randomWords} randomSyntax={randomSyntax} />
+          <Content randomWords={randomWords} randomSyntax={randomSyntax} />
         </div>
         <div>
           <Chat />
