@@ -1,11 +1,8 @@
-import style from './styles/Stats.module.css'
-
-const Stats = ({ wpm, acc }) => {
+const Stats = ({ wordsPerMin, accuracy }) => {
   return (
-    <div className={style.container}>
-      <p>WPM: {wpm}</p>
-      <p>ACC: {acc}</p>
-    </div>
+    <>
+      <span>WPM: {wordsPerMin} | ACC: {accuracy}%</span>
+    </>
   )
 }
 

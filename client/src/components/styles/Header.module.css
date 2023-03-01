@@ -1,4 +1,6 @@
 .header {
   margin: auto 0;
   text-align: end;
+  font-size: 2rem;
+  color: var(--clr-orange);
 }

@@ -21,17 +21,16 @@ const Chat = () => {
   },[])
 
   return (
-    // <div className={style.chat}>
-    //   <h1>Messages:</h1>
-    //   <form onSubmit={sendMessage}>
-    //     <input type="text" placeholder='Message...'
-    //       onChange={e => setMsgSend(e.target.value)}
-    //       value={msgSend} />
-    //     <button>Send</button>
-    //   </form>
-    //   {msgReceived.map((msg, idx) => <p key={idx}>{msg}</p>)}
-    // </div>
-    null
+    <div className={style.chat}>
+      <h1>Messages:</h1>
+      <form onSubmit={sendMessage}>
+        <input type="text" placeholder='Message...'
+          onChange={e => setMsgSend(e.target.value)}
+          value={msgSend} />
+        <button>Send</button>
+      </form>
+      {msgReceived.map((msg, idx) => <p key={idx}>{msg}</p>)}
+    </div>
   )
 }
 

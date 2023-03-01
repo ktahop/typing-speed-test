@@ -1,10 +1,14 @@
 import style from './Main.module.css'
 import Header from '../components/Header'
-import Stats from "../components/Stats";
 import MainField from "../components/MainField";
 import Chat from "../components/Chat"
+import { generateWords } from '../utils/RanWords';
+import { generateSyntaxes } from '../utils/RanWords';
 
 const Main = () => {
+  const randomWords = generateWords(20)
+  const randomSyntax =  generateSyntaxes(20)
+
   return (
     <div className={style.container}>
       <div className={style.header}>
@@ -12,10 +16,11 @@ const Main = () => {
       </div>
       <div className={style.flex}>
         <div className={style.content}>
-          <Stats wpm='79' acc='100'/>
-          <MainField />
+          <MainField randomWords={randomWords} randomSyntax={randomSyntax} />
         </div>
-        <Chat />
+        <div>
+          <Chat />
+        </div>
       </div>
     </div>
   )
