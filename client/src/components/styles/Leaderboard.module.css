@@ -10,7 +10,6 @@
 
 .container ul {
   max-height: 200px;
-  overflow: scroll;
 }
 
 .container li {

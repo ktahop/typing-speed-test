@@ -5,7 +5,7 @@ import Chat from "../components/Chat"
 import { generateWords, generateSyntaxes } from '../utils/RanWords';
 
 const Main = () => {
-  const randomWords = generateWords(10)
+  const randomWords = generateWords(20)
   const randomSyntax =  generateSyntaxes(20)
 
   return (
