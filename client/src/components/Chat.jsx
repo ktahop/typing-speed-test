@@ -1,11 +1,11 @@
-import style from './styles/Chat.module.css'
-import io from 'socket.io-client'
-import { useState, useEffect } from 'react'
+import style from './styles/Chat.module.css';
+import io from 'socket.io-client';
+import { useState, useEffect } from 'react';
 
 const Chat = () => {
-  const [socket] = useState(() => io(':8000'))
-  const [msgReceived, setMsgReceived] = useState([])
-  const [msgSend, setMsgSend] = useState("")
+  const [socket] = useState(() => io(':8000'));
+  const [msgReceived, setMsgReceived] = useState([]);
+  const [msgSend, setMsgSend] = useState("");
 
   const sendMessage = (e) => {
     e.preventDefault()

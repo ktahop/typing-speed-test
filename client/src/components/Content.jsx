@@ -8,8 +8,8 @@ const MainField = ({ randomWords, randomSyntax }) => {
   const [wordsPerMin, setWordsPerMin] = useState(0);
   const [accuracy, setAccuracy] = useState(0);
   const [isDone, setIsDone] = useState(false);
-  const [option, setOption] = useState(randomSyntax);
-  const element = useRef(HTMLDivElement);
+  const [option, setOption] = useState(randomWords);
+  const character = useRef();
 
   const {
     states: {
@@ -44,12 +44,14 @@ const MainField = ({ randomWords, randomSyntax }) => {
       deleteTyping(control);
     } else if (key.length === 1) {
       insertTyping(key);
-    }
+    };
   };
 
   const handleReset = () => {
     resetTyping();
-    setIsDone(false)
+    setWordsPerMin(0);
+    setAccuracy(0);
+    setIsDone(false);
   };
 
   return (
@@ -78,7 +80,7 @@ const MainField = ({ randomWords, randomSyntax }) => {
         />
         <div
           tabIndex={0}
-          ref={element}
+          ref={character}
           onKeyDown={(e) => handleKeyPress(e.key, e.ctrlKey)}
           className={style.textarea}
         >
@@ -109,6 +111,7 @@ const MainField = ({ randomWords, randomSyntax }) => {
         wordsPerMin={wordsPerMin}
         accuracy={accuracy}
         isDone={isDone}
+        onResetProp={handleReset}
       />
     </div>
   );

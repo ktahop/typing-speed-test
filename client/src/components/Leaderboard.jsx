@@ -1,39 +1,42 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import style from './styles/Leaderboard.module.css'
+import style from './styles/Leaderboard.module.css';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
-const Leaderboard = ({ wordsPerMin, accuracy, isDone }) => {
+const Leaderboard = ({ wordsPerMin, accuracy, isDone, onResetProp }) => {
+  const [leaderboard, setLeaderboard] = useState([]);
   const [entry, setEntry] = useState({
     name: "",
     wordsPerMin,
     accuracy,
-  })
-  const [leaderboard, setLeaderboard] = useState([])
+  });
 
   const handleInput = (e) => {
     setEntry({
       ...entry,
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/leaderboard')
       .then(res => setLeaderboard(res.data))
       .catch(err => console.log(err))
-  },[])
+  }, []);
 
   useEffect(() => {
     setEntry({
       ...entry,
       wordsPerMin,
       accuracy
-    })
-  }, [ wordsPerMin, accuracy])
+    });
+  }, [ wordsPerMin, accuracy]);
 
   const handleSubmit = (e) => {
+    e.preventDefault()
     axios.post('http://localhost:8000/api/leaderboard', entry)
-    e.value.clear()
+     .then(setLeaderboard([...leaderboard, entry]))
+     .then(onResetProp())
+    e.target.reset()
   }
 
   return (
@@ -56,12 +59,12 @@ const Leaderboard = ({ wordsPerMin, accuracy, isDone }) => {
       <ul>
         {leaderboard.map((person, idx) => {
           return (
-            <li key={idx}>{person.name} - WPM: {person.wordsPerMin} ACC: {person.accuracy}</li>
+            <li key={idx}>:: {person.name} - WPM: {person.wordsPerMin} ACC: {person.accuracy}</li>
           )
         })}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Leaderboard
+export default Leaderboard;

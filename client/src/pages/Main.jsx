@@ -2,11 +2,10 @@ import style from './Main.module.css'
 import Header from '../components/Header'
 import Content from "../components/Content";
 import Chat from "../components/Chat"
-import { generateWords } from '../utils/RanWords';
-import { generateSyntaxes } from '../utils/RanWords';
+import { generateWords, generateSyntaxes } from '../utils/RanWords';
 
 const Main = () => {
-  const randomWords = generateWords(20)
+  const randomWords = generateWords(10)
   const randomSyntax =  generateSyntaxes(20)
 
   return (
