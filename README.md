@@ -10,5 +10,5 @@ handles the game logic to easily create the functionality. Implemented [Faker](h
 # Features
 * Option to choose between random words or random JavaScript syntaxes
 * Characters change colors to show feedback on typing each character correctly
-* Global Chat to interact with other players
+* Global chat to interact with other players
 * Leaderboard showing a list of players showing their words per minute and accuracy
