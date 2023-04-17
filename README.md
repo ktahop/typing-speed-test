@@ -33,4 +33,5 @@ $ cd client/
 $ npm install
 $ npm run dev
 ```
-
+# Acknowledgements
+* This project was inspired by [_typings.gg_](https://typings.gg)
