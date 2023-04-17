@@ -1,5 +1,5 @@
 # Typing Speed Test
-> A simple typing game that will test your typing skill measuring accuracy and words per minute.
+> A simple React typing game project that will test your typing skill measuring accuracy (ACC) and words per minute (WPM).
 > Live demo [_here_](http://typingspeed-test.com/)
 
 ## Technologies Used
@@ -10,10 +10,11 @@
 - [_react-typing-game-hook_](https://www.npmjs.com/package/react-typing-game-hook)
 
 ## Features
-* Option to choose between random words or random JavaScript syntaxes
+* Option to choose between random words using Faker API or random JavaScript syntaxes
 * Characters change colors to show feedback on typing each character correctly
-* Global chat to interact with other players
-* Leaderboard showing a list of players showing their words per minute and accuracy
+* Global chat to interact with other players using Socket.IO
+* Leaderboard showing a list of players showing their words per minute and accuracy. User data is stored using MongoDB
+* Game logics are implemented with the help from a third-party custom hook with react-typing-game-hook
 
 ![](https://i.imgur.com/CidjJpV.gif)
 
@@ -33,5 +34,5 @@ $ cd client/
 $ npm install
 $ npm run dev
 ```
-# Acknowledgements
+## Acknowledgements
 * This project was inspired by [_typings.gg_](https://typings.gg)
