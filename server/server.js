@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-require('./server/config/mongoose.config');
+require('./config/mongoose.config');
 
 app.use(cors(), express.json(), express.urlencoded({ extended: true }));
 
-require('./server/routes/leaderboard.routes')(app);
+require('./routes/leaderboard.routes')(app);
 
 const server = app.listen(8000, () => {
   console.log('Server is running')
