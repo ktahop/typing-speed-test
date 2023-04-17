@@ -15,6 +15,8 @@
 * Global chat to interact with other players
 * Leaderboard showing a list of players showing their words per minute and accuracy
 
+![](https://i.imgur.com/CidjJpV.gif)
+
 ## Installation
 To run this project, you will need <b><i>two</i></b> terminals to run both frontend and backend servers.
 <br />
@@ -25,12 +27,10 @@ $ cd server/
 $ npm install
 $ nodemon server.js
 ```
-<br />
-<br />
-For the second terminal, you'll install te frontend packages and run the server using:
+For the second terminal, you'll install the frontend packages and run the server using:
 ```
 $ cd client/
 $ npm install
 $ npm run dev
 ```
-![](https://i.imgur.com/CidjJpV.gif)
+
