@@ -1,5 +1,5 @@
 # Typing Speed Test
-> A simple React typing game project that will test your typing skill measuring accuracy (ACC) and words per minute (WPM).
+> A simple React typing game project that will test your typing skill measuring accuracy (ACC) and words per minute (WPM). Written in Javascript.
 > Live demo [_here_](http://typingspeed-test.com/)
 
 ## Technologies Used
